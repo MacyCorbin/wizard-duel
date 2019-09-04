@@ -25,29 +25,96 @@
 
 <body>
     <!-- First screen has choose player -->
+    <div id="playerScreen" class=" animated zoomIn bounceOut">
 
-    <!-- Header Section -->
+        <!-- Header Section -->
+        <div class="header"> 
+            <img src="assets/images/wands-01.png" alt="wand1"/>
+            Wizard Duel
+            <img src="assets/images/wands-02.png" alt="wand2"/>
+        </div>
 
-    <!-- Introduction -->
+        <!-- Introduction -->
+        <br>
+        <br>
+        <h3>Welcome to the Room of Requirement.
+            Here you will join Dumbledore's Army and master spells.
+            Choose your witch or wizard, then your opponent.
+        </h3>
 
-    <!-- Witches and Wizards -->
+        <!-- Witches and Wizards -->
+        <br>
+        <div id="game" class="center-text container card-deck">
+        </div>
+
+    </div>
 
     <!-- Second screen player duels opponents -->
+    <div id="duelScreen" >
 
-    <!-- Remaining Opponents Section -->
+        <!-- Header Section -->
+        <div class="header"> 
+            <img src="assets/images/wands-01.png" alt="wand1"/>
+            Wizard Duel
+            <img src="assets/images/wands-02.png" alt="wand2"/>
+        </div>
 
-    <!-- Player Section -->
 
-    <!-- Button -->
+        <!-- Remaining Opponents Section -->
+        <div class="row" id="btn-row">
+            <div class="col-12" >
+                Opponents Remaining:
+            </div>
+        </div>
 
-    <!-- Opponent Section -->
+        <!-- Duel Row -->
+        <div class="row">
 
-    <!-- Message Section -->
+            <!-- Player Section -->
+            <div class="col-5">
+                The Chosen One
+                <div class="container">
+                    <div id="playerDiv"></div>
+                    <div id="playerHealthDiv"></div>
+                </div>
+            </div>
+
+            <!-- Button -->
+            <div class="col-2"> 
+                <img src="assets/images/wands-03.png" width="100%" alt="VS"/>
+                <button type="button" name="attack" id="attackBtn" class="button">Cast Spell</button>
+            </div>
+
+            <!-- Opponent Section -->
+            <div class="col-5">
+                Opponent
+                <div class="container">
+                    <div id="opponentDiv" ></div>
+                    <div id="opponentHealthDiv"></div>
+                </div>
+            </div>
+
+            <!-- Message Section -->
+            <div class="row">
+                <div class="col-12">
+                    <div id="msg"></div>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <footer>
     </footer>
     <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN "
+        crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q "
+        crossorigin="anonymous "></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl "
+        crossorigin="anonymous "></script>
+    <script src="./assets/javascript/game.js "></script>
 
 </body>
 </html>

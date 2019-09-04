@@ -1,0 +1,76 @@
+/*------Color Scheme------ */
+/* 
+#04899b  light blue
+#015564  medium blue
+#04899B
+#2A3852  dark blue
+#FDD44A  yellow
+#38C790  green
+#CE593F  red
+#9E9EA0  grey
+*/
+
+body {
+    color: #FDD44A!important;
+    background-color: #2A3852;
+    background-image: url("../images/Room_of_Requirement_.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    font-size: 2vw !important;
+    
+}
+
+@font-face {
+    font-family: "HARRYP__";
+    src: url("../javascript/HARRYP__.TTF");
+}
+
+.center-text {
+    margin: 0 auto !important;
+    text-align: center;
+}
+
+
+/*----------Choose Player Screen-----------*/
+#playerScreen {
+    min-height: 100%;
+    position: absolute;
+    text-align: center;
+    /* padding-top: 5%; */
+    color: #FDD44A;
+    font-family: 'IM Fell Double Pica', serif;
+    /* font-family: 'Pompiere', cursive; */
+    /* font-family: 'Bellefair', serif; */
+    /* font-family: 'Thasadith', sans-serif;  */
+    
+}
+
+#playerScreen .header{
+    font-family: "HARRYP__";
+    text-align: center;
+    width: 100%;
+    font-size: 50px;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #015564;
+    color: #04899b;
+}
+#playerScreen .header h1{
+    margin: 0px;
+    width: 10%;
+}
+
+#playerScreen .header img{
+    width: 50px;
+}
+
+h3{
+   margin: 0 20%;
+}
+
+/*----------Duel Screen-----------*/
+
+
+/*----------Footer-----------*/
