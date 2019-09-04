@@ -68,7 +68,6 @@ function changeView() {
 
 $(document).ready(function () {
     $("#duelScreen").hide();
-    $("#globalMsg").hide();
     initCharacters();
     characterCards("#game");
 });
