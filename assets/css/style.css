@@ -34,6 +34,40 @@ body {
 }
 
 
+#wand1{
+    background-image: url("/assets/images/wands-01.png");
+    justify-content: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 80%;
+    height: 80%;
+    margin: 2% 0 0 80%;
+    /* padding: 5% 0 0 75%; */
+    
+    
+    
+}
+
+.wand2{
+    background-image: url("/assets/images/wands-02.png");
+    justify-content: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 80%;
+    height: 80%;
+    padding: 3% 0 0 0;
+    margin-top: 2%;
+    
+    
+}
+.headerWands{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
 /*----------Choose Player Screen-----------*/
 #playerScreen {
     min-height: 100%;
@@ -52,7 +86,7 @@ body {
     font-family: "HARRYP__";
     text-align: center;
     width: 100%;
-    font-size: 50px;
+    font-size: 6vw;
     padding: 10px;
     margin-bottom: 15px;
     background-color: #015564;
@@ -77,15 +111,15 @@ h3{
     font-family: "HARRYP__";
     text-align: center;
     width: 100%;
-    font-size: 50px;
+    font-size: 6vw;
     padding: 0px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     background-color: #015564;
     color: #04899b;
 }
 #duelScreen .header h1{
     margin: 0px;
-    width: 10%;
+    /* width: 10%; */
 }
 
 #duelScreen .header img{
@@ -107,6 +141,19 @@ h3{
 /*----------Duel Images-----------*/
 #img-size{
     width:70%;
+}
+
+#wands{
+    background-image: url("/assets/images/wands-03.png");
+    justify-content: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+}
+
+.divSize{
+    width: 100%;
+    height: 54%;
 }
 
 /*----------Spell Button-----------*/
