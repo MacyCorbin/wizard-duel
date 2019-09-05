@@ -1,3 +1,7 @@
+// Author: Macy Corbin
+// Portfolio: http://www.macy-corbin.com
+// GitHub: https://github.com/MacyCorbin
+
 // Global Variables
 var baseAttack = 0; // original attack strength
 var player; // player chosen
@@ -112,7 +116,7 @@ $(document).on("click", "img", function () {
                 opponent = charArray[j]; // sets opponent
                 charArray.splice(j, 1);
                 opponentSelected = true;
-                $("#message").html("Click the button to attack!");
+                $("#message").html("Click the button to cast spell!");
             }
         }
         $("#opponentDiv").append(this); // appends the selected opponent to the opponent div 
