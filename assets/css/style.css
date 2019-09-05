@@ -100,4 +100,13 @@ h3{
     font-family: 'IM Fell Double Pica', serif;
 }
 
+/*----------Opponent-----------*/
+#opponentLeft img{
+    width: 20%;
+    margin: 1%;
+}
+
+#opponentDiv, #opponentHealthDiv{
+    font-size: 1.5vw;
+}
 /*----------Footer-----------*/

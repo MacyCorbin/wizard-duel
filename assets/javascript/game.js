@@ -5,11 +5,11 @@ var opponent; // current opponent
 var charArray = []; // stores characters in array
 var playerSelected = false; // mark if player chosen
 var opponentSelected = false; // mark if opponent chosen
-var obj = document.createElement("audio");// creates spell sound when the cast spell button is clicked
-    obj.src="assets/sounds/spellSound.mp3";
-    obj.volume=0.50;
-    obj.autoPlay=false;
-    obj.preLoad=true;  
+var spellSound = document.createElement("audio");// creates spell sound when the cast spell button is clicked
+    spellSound.src="assets/sounds/spellSound.mp3";
+    spellSound.volume=0.50;
+    spellSound.autoPlay=false;
+    spellSound.preLoad=true; 
 
 
 // Constructor
@@ -47,12 +47,6 @@ function initCharacters() {
     var ron = new Character("Ron Weasley", 130, 15, 2, "./assets/images/Ron.png");
     var ginny = new Character("Ginny Weasley", 150, 20, 7, "./assets/images/Ginny.jpg");
     charArray.push(harry, hermione, ron, ginny);
-}
-
-// plays audio file (.mp3)
-function playAudio() {
-    var audio = new Audio("./assets/media/themeSongSmall.mp3");
-    audio.play();
 }
 
 // Create the character cards onscreen
@@ -132,7 +126,6 @@ $(document).on("click", "img", function () {
         for (var i = 0; i < charArray.length; i++) {
             if (charArray[i].name == (this).id) {
                 player = charArray[i]; // sets current player
-                playAudio(); // starts theme song
                 setBaseAttack(player);
                 charArray.splice(i, 1);
                 playerSelected = true;
@@ -151,9 +144,11 @@ $(document).on("click", "img", function () {
 });
 
 
+
 $(document).ready(function () {
     $("#duelScreen").hide();
     initCharacters();
     characterCards("#game");
+    
 });
 
