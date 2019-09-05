@@ -19,6 +19,7 @@ body {
     background-repeat: no-repeat;
     min-height: 100vh;
     font-size: 2vw !important;
+    font-family: 'IM Fell Double Pica', serif;
     
 }
 
@@ -72,5 +73,31 @@ h3{
 
 /*----------Duel Screen-----------*/
 
+#duelScreen .header{
+    font-family: "HARRYP__";
+    text-align: center;
+    width: 100%;
+    font-size: 50px;
+    padding: 0px;
+    margin-bottom: 15px;
+    background-color: #015564;
+    color: #04899b;
+}
+#duelScreen .header h1{
+    margin: 0px;
+    width: 10%;
+}
+
+#duelScreen .header img{
+    width: 50px;
+}
+
+.dualBackground {
+    background: #04899b !important;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    font-family: 'IM Fell Double Pica', serif;
+}
 
 /*----------Footer-----------*/
