@@ -104,11 +104,30 @@ h3{
     padding-top: 1%;
 }
 
-/*----------Player-----------*/
+/*----------Duel Images-----------*/
 #img-size{
     width:70%;
 }
 
+/*----------Spell Button-----------*/
+#button{
+    text-align: center;
+    width: 40%;
+}
+.button {
+    text-align: center;
+    background-color: #38C790;
+    border-radius: 4px;
+    border: 2px solid #38C790;
+    color: white;
+    margin-top: 20px;
+    font-size: 2vw;
+}
+
+.button:hover{
+    background-color: rgb(45, 163, 118);
+    border: 2px solid rgb(45, 163, 118);
+}
 /*----------Opponent-----------*/
 #opponentLeft img{
     width: 20%;

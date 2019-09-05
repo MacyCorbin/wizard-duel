@@ -147,6 +147,42 @@ $(document).on("click", "img", function () {
 
 });
 
+$(document).on("click", "#attackBtn", function () {
+    spellSound.play();
+    if (playerSelected && opponentSelected) {
+        if (isAlive(player) && isAlive(opponent)) {
+            player.attack(opponent);
+            opponent.counterAttack(player);
+            $("#playerHealthDiv").html("HP: " + player.healthPoints);
+            $("#opponentHealthDiv").html("HP: " + opponent.healthPoints);
+            if (!isAlive(opponent)) {
+                $("#opponentHealthDiv").html("DEFEATED!");
+                $("#playerHealthDiv").html("Opponent defeated!");
+                $("#message").html("Pick another opponent to battle...");
+            }
+            if (!isAlive(player)) {
+                $("#playerHealthDiv").html("YOU LOST!");
+                $("#message").html("Try again...");
+                $("#attackBtn").html("Restart Game");
+                $(document).on("click", "#attackBtn", function () { // restarts game
+                    location.reload();
+                });
+            }
+        }
+        if (!isAlive(opponent)) {
+            $("#opponentDiv").removeClass("animated zoomInRight");
+            $("#opponentHealthDiv").removeClass("animated zoomInRight");
+            $("#opponentDiv").children().remove();
+            $("#opponentDiv").html("");
+            $("#opponentHealthDiv").html("");
+            opponentSelected = false;
+            if (isWinner()) {
+                $("#duelScreen").hide();
+                $("#winMessage").show();
+            }
+        }
+    }
+});
 
 
 $(document).ready(function () {
