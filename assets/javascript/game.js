@@ -14,12 +14,8 @@ var spellSound = document.createElement("audio");// creates spell sound when the
     spellSound.volume=0.50;
     spellSound.autoPlay=false;
     spellSound.preLoad=true; 
-// room of requirement theme
-// var requirementTheme = document.createElement("audio");
-// requirementTheme .src="assets/sounds/Room-of-Requirements.mp3";
-// requirementTheme .volume=0.30;
-// requirementTheme .autoPlay=false;
-// requirementTheme .preLoad=true;
+
+
 
 //array for a random spell to be chosen
 var spellList = [   
@@ -34,11 +30,13 @@ var spellList = [
     "protego"
 ]
 
+
+
 // Constructor
 function Character(name, hp, ap, counter, pic) {
-    counter= Math.floor(Math.random() * 50); //random spell attack value
-    ap= Math.floor(Math.random() * 100); //random spell attack value
-    hp= Math.floor(Math.random() * 200) + 100;//random spell health value
+    // counter= Math.floor(Math.random() * 10) + 20; //random spell attack value
+    // ap= Math.floor(Math.random() * 10) + 50; //random spell attack value
+    hp= Math.floor(Math.random() * 200) + 100;//random health value
     this.name = name;
     this.healthPoints = hp;
     this.attackPower = ap;
@@ -53,17 +51,18 @@ Character.prototype.increaseAttack = function () {
 
 // Performs an attack
 Character.prototype.attack = function (Obj) {
-    var userSpell = spellList[Math.floor(Math.random()*spellList.length)];
-    
+    var userSpell = spellList[Math.floor(Math.random()*spellList.length)];//random spell name
+    this.attackPower= Math.floor(Math.random() * 70);//random spell attack value
     Obj.healthPoints -= this.attackPower;
     $("#message").html("You attacked " +
         Obj.name + " with " + userSpell+ " for " + this.attackPower + " damage points.");
-    this.increaseAttack();
+    // this.increaseAttack();
 };
 
 // Performs a counter attack
 Character.prototype.counterAttack = function (Obj) {
-    var opponentSpell = spellList[Math.floor(Math.random()*spellList.length)];
+    var opponentSpell = spellList[Math.floor(Math.random()*spellList.length)];//random spell name
+    this.counterAttackPower = Math.floor(Math.random() * 25);//random spell attack value
     Obj.healthPoints -= this.counterAttackPower;
     $("#message").append("<br>" + this.name + " counter attacked you with " +
     opponentSpell+ " for " + this.counterAttackPower + " damage points.");
@@ -223,6 +222,7 @@ $(document).on("click", "#attackBtn", function () {
 
 
 $(document).ready(function () {
+    // room of requirement theme
     $("#duelScreen").hide();
     initCharacters();
     characterCards("#game");
