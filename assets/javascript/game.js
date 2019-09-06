@@ -45,9 +45,9 @@ function Character(name, hp, ap, counter, pic) {
 }
 
 // Increase the attack strength (this attack strength + original attack strength)
-Character.prototype.increaseAttack = function () {
-    this.attackPower += baseAttack;
-};
+// Character.prototype.increaseAttack = function () {
+//     this.attackPower += baseAttack;
+// };
 
 // Performs an attack
 Character.prototype.attack = function (Obj) {
