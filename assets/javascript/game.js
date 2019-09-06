@@ -14,10 +14,31 @@ var spellSound = document.createElement("audio");// creates spell sound when the
     spellSound.volume=0.50;
     spellSound.autoPlay=false;
     spellSound.preLoad=true; 
+// room of requirement theme
+var requirementTheme = document.createElement("audio");
+requirementTheme .src="assets/sounds/Room-of-Requirements.mp3";
+requirementTheme .volume=0.30;
+requirementTheme .autoPlay=false;
+requirementTheme .preLoad=true;
 
+//array for a random spell to be chosen
+var spellList = [   
+
+    "confundus",
+    "stupefy",
+    "levicorpus",
+    "expelliarmus",
+    "petrificus totalus",
+    "impedimenta",
+    "reducto",
+    "protego"
+]
 
 // Constructor
 function Character(name, hp, ap, counter, pic) {
+    counter= Math.floor(Math.random() * 50); //random spell attack value
+    ap= Math.floor(Math.random() * 100); //random spell attack value
+    hp= Math.floor(Math.random() * 200) + 100;//random spell health value
     this.name = name;
     this.healthPoints = hp;
     this.attackPower = ap;
@@ -32,16 +53,20 @@ Character.prototype.increaseAttack = function () {
 
 // Performs an attack
 Character.prototype.attack = function (Obj) {
+    var userSpell = spellList[Math.floor(Math.random()*spellList.length)];
+    
     Obj.healthPoints -= this.attackPower;
     $("#message").html("You attacked " +
-        Obj.name + " for " + this.attackPower + " damage points.");
+        Obj.name + " with " + userSpell+ " for " + this.attackPower + " damage points.");
     this.increaseAttack();
 };
 
 // Performs a counter attack
 Character.prototype.counterAttack = function (Obj) {
+    var opponentSpell = spellList[Math.floor(Math.random()*spellList.length)];
     Obj.healthPoints -= this.counterAttackPower;
-    $("#message").append("<br>" + this.name + " counter attacked you for " + this.counterAttackPower + " damage points.");
+    $("#message").append("<br>" + this.name + " counter attacked you with " +
+    opponentSpell+ " for " + this.counterAttackPower + " damage points.");
 };
 
 // Initialize all the characters
@@ -180,12 +205,17 @@ $(document).on("click", "#attackBtn", function () {
             opponentSelected = false;
             if (isWinner()) {
                 $("#duelScreen").removeClass("animated slideInDown");
+                $("#footer").removeClass("animated zoomIn");
+                $("#footer").addClass("animated fadeInUp");
                 $("#duelScreen").addClass("animated slideOutUp");
                 $("#duelScreen").hide();
                 $("#backgrounds").removeClass("background2");
                 $("#winScreen").show();
                 $("#winMessage").show();
                 $("#backgrounds").addClass("background1");
+                $(document).on("click", "#playAgain", function () { // restarts game
+                    location.reload();
+                });
             }
         }
     }
@@ -196,10 +226,11 @@ $(document).ready(function () {
     $("#duelScreen").hide();
     initCharacters();
     characterCards("#game");
+    requirementTheme.play();// starts theme song
     $("#winScreen").hide();
     $("#winMessage").hide();
-    
     $("#backgrounds").addClass("background1");
+   
     
 });
 

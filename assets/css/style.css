@@ -183,7 +183,7 @@ body {
 /*----------Spell Button-----------*/
 #button{
     text-align: center;
-    width: 40%;
+    width: 80%;
 }
 .button {
     text-align: center;
@@ -218,7 +218,7 @@ body {
 #winMessage{
     padding: 20%;
     text-align: center;
-    font-size: 2em;
+    font-size: 1.5em;
     font-family: 'IM Fell Double Pica', serif;
 }
 
@@ -244,6 +244,10 @@ body {
 #winScreen .header h1{
     margin: 0px;
     width: 10%;
+}
+
+#playAgain{
+    text-align: center;
 }
 
 /*----------Footer-----------*/
@@ -279,13 +283,21 @@ footer a:link {
     .card{
         width: 55%;
         margin: 1%;
-
     }
 
     #playerScreen p{
         margin: 0 10%;
         text-shadow: 2px 1px 4px rgb(0, 0, 0);
         font-size: 15px;
+    }
+
+    #winMessage{
+        font-size: 2.5em;
+        padding-top: 30%;
+    }
+
+    .button {
+        font-size: 3vw;
     }
 
 }
