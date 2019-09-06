@@ -46,10 +46,10 @@ Character.prototype.counterAttack = function (Obj) {
 
 // Initialize all the characters
 function initCharacters() {
-    var harry = new Character("Harry Potter", 170, 30, 5, "./assets/images/Harry.jpg");
-    var hermione = new Character("Hermione Granger", 200, 40, 20, "./assets/images/hermione.jpg");
-    var ron = new Character("Ron Weasley", 130, 15, 2, "./assets/images/Ron.png");
-    var ginny = new Character("Ginny Weasley", 150, 20, 7, "./assets/images/Ginny.jpg");
+    var harry = new Character("Harry Potter", 170, 30, 20, "./assets/images/Harry.jpg");
+    var hermione = new Character("Hermione Granger", 200, 40, 70, "./assets/images/hermione.jpg");
+    var ron = new Character("Ron Weasley", 130, 10, 2, "./assets/images/Ron.png");
+    var ginny = new Character("Ginny Weasley", 150, 20, 15, "./assets/images/Ginny.jpg");
     charArray.push(harry, hermione, ron, ginny);
 }
 
@@ -86,6 +86,8 @@ function updatePics(fromDivID, toDivID) {
 function changeView() {
     $("#playerScreen").empty();
     $("#duelScreen").show();
+    $("#backgrounds").removeClass("background1");
+    $("#backgrounds").addClass("background2");
 }
 
 // "Save" the original attack value
@@ -180,9 +182,10 @@ $(document).on("click", "#attackBtn", function () {
                 $("#duelScreen").removeClass("animated slideInDown");
                 $("#duelScreen").addClass("animated slideOutUp");
                 $("#duelScreen").hide();
+                $("#backgrounds").removeClass("background2");
                 $("#winScreen").show();
                 $("#winMessage").show();
-                
+                $("#backgrounds").addClass("background1");
             }
         }
     }
@@ -195,6 +198,8 @@ $(document).ready(function () {
     characterCards("#game");
     $("#winScreen").hide();
     $("#winMessage").hide();
+    
+    $("#backgrounds").addClass("background1");
     
 });
 
