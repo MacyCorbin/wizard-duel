@@ -15,11 +15,11 @@ var spellSound = document.createElement("audio");// creates spell sound when the
     spellSound.autoPlay=false;
     spellSound.preLoad=true; 
 // room of requirement theme
-var requirementTheme = document.createElement("audio");
-requirementTheme .src="assets/sounds/Room-of-Requirements.mp3";
-requirementTheme .volume=0.30;
-requirementTheme .autoPlay=false;
-requirementTheme .preLoad=true;
+// var requirementTheme = document.createElement("audio");
+// requirementTheme .src="assets/sounds/Room-of-Requirements.mp3";
+// requirementTheme .volume=0.30;
+// requirementTheme .autoPlay=false;
+// requirementTheme .preLoad=true;
 
 //array for a random spell to be chosen
 var spellList = [   
@@ -71,7 +71,6 @@ Character.prototype.counterAttack = function (Obj) {
 
 // Initialize all the characters
 function initCharacters() {
-    requirementTheme.play();// starts theme song
     var harry = new Character("Harry Potter", 170, 30, 20, "./assets/images/Harry.jpg");
     var hermione = new Character("Hermione Granger", 200, 40, 70, "./assets/images/hermione.jpg");
     var ron = new Character("Ron Weasley", 130, 10, 2, "./assets/images/Ron.png");
@@ -227,11 +226,9 @@ $(document).ready(function () {
     $("#duelScreen").hide();
     initCharacters();
     characterCards("#game");
-    // requirementTheme.play();// starts theme song
     $("#winScreen").hide();
     $("#winMessage").hide();
     $("#backgrounds").addClass("background1");
-   
-    
+
 });
 
