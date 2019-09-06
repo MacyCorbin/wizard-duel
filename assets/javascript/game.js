@@ -80,6 +80,7 @@ function initCharacters() {
 
 // Create the character cards onscreen
 function characterCards(divID) {
+    requirementTheme.play();// starts theme song
     $(divID).children().remove();
     for (var i = 0; i < charArray.length; i++) {
         $(divID).append("<div style = 'background-color:#015564' />");
@@ -226,7 +227,7 @@ $(document).ready(function () {
     $("#duelScreen").hide();
     initCharacters();
     characterCards("#game");
-    requirementTheme.play();// starts theme song
+    // requirementTheme.play();// starts theme song
     $("#winScreen").hide();
     $("#winMessage").hide();
     $("#backgrounds").addClass("background1");
