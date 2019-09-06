@@ -177,8 +177,12 @@ $(document).on("click", "#attackBtn", function () {
             $("#opponentHealthDiv").html("");
             opponentSelected = false;
             if (isWinner()) {
+                $("#duelScreen").removeClass("animated slideInDown");
+                $("#duelScreen").addClass("animated slideOutUp");
                 $("#duelScreen").hide();
+                $("#winScreen").show();
                 $("#winMessage").show();
+                
             }
         }
     }
@@ -189,6 +193,7 @@ $(document).ready(function () {
     $("#duelScreen").hide();
     initCharacters();
     characterCards("#game");
+    $("#winScreen").hide();
     $("#winMessage").hide();
     
 });
