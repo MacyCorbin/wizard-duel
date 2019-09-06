@@ -19,7 +19,8 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 
     <!-- Link to Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Bellefair|IM+Fell+Double+Pica|Pompiere|Thasadith&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bellefair|IM+Fell+Double+Pica|Pompiere|Thasadith&display=swap"
+        rel="stylesheet">
 
     <!-- Link to Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
@@ -32,27 +33,27 @@
     <div id="playerScreen" class=" animated zoomIn bounceOut">
 
         <!-- Header Section -->
-        <div class="header"> 
+        <div class="header">
             <div class="row">
                 <div class="col">
-                    <div id="wand1" ></div>
+                    <div id="wand1"></div>
                 </div>
-                <div class=".col-md-6 .offset-md-3" >
+                <div class=".col-md-6 .offset-md-3">
                     Wizard Duel
                 </div>
                 <div class="col">
                     <div class="wand2"></div>
-                </div> 
+                </div>
             </div>
         </div>
 
         <!-- Introduction -->
         <br>
         <br>
-        <h3>Welcome to the Room of Requirement.
+        <p>Welcome to the Room of Requirement.
             Here you will join Dumbledore's Army and master spells.
             Choose your witch or wizard, then your opponent.
-        </h3>
+        </p>
 
         <!-- Witches and Wizards -->
         <br>
@@ -65,31 +66,31 @@
     <div id="duelScreen" class="dualBackground animated slideInDown">
 
         <!-- Header Section -->
-        <div class="header"> 
+        <div class="header">
             <div class="row">
                 <div class="col">
-                    <div id="wand1" ></div>
+                    <div id="wand1"></div>
                 </div>
-                <div class=".col-md-6 .offset-md-3" >
+                <div class=".col-md-6 .offset-md-3">
                     Wizard Duel
                 </div>
                 <div class="col">
                     <div class="wand2"></div>
-                </div> 
+                </div>
             </div>
         </div>
 
 
         <!-- Remaining Opponents Section -->
         <div class="row">
-            <div class="col-12 center-text" >
+            <div class="col-12 center-text">
                 Opponents Remaining
                 <div id="opponentLeft"></div>
             </div>
         </div>
 
         <!-- Duel Row -->
-        <div class="row text-center paddingTop">
+        <div class="row text-center paddingTop duel-row">
 
             <!-- Player Section -->
             <div class="col-5" style="padding-left:3%; padding-right:0px">
@@ -101,28 +102,36 @@
             </div>
 
             <!-- Button -->
-            <div class="col-2" style="padding:0px"> 
-               <div class="divSize" class="row"id="wands"></div>
+            <div class="col-2" style="padding:0px">
+                <div class="divSize" class="row" id="wands"></div>
                 <button type="button" name="attack" id="attackBtn" class="button">Cast Spell</button>
-              
             </div>
 
             <!-- Opponent Section -->
-            <div class="col-5"style="padding-right:3%; padding-left:0px">
+            <div class="col-5" style="padding-right:3%; padding-left:0px">
                 Opponent
-                <div class="container"id="img-size">
-                    <div id="opponentDiv" ></div>
+                <div class="container" id="img-size">
+                    <div id="opponentDiv"></div>
                     <div id="opponentHealthDiv"></div>
                 </div>
             </div>
+        </div>
 
-            <!-- Message Section -->
-            <div class="row">
-                <div class="col-12">
-                    <div id="message"></div>
-                    <br>
-                </div>
+        <!-- Message Section -->
+        <div class="row" id="message-row">
+            <div class="col-12">
+                <div id="message"></div>
+                <br>
             </div>
+        </div>
+
+    </div>
+    <div class="container-fluid ">
+        <div id="winMessage" class="animated fadeInUp">
+            <p class="shadow">
+                CONGRATULATIONS!
+                <br> You won the duel!
+            </p>
         </div>
     </div>
 
@@ -139,4 +148,5 @@
     <script src="./assets/javascript/game.js "></script>
 
 </body>
+
 </html>
