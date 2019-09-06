@@ -71,6 +71,7 @@ Character.prototype.counterAttack = function (Obj) {
 
 // Initialize all the characters
 function initCharacters() {
+    requirementTheme.play();// starts theme song
     var harry = new Character("Harry Potter", 170, 30, 20, "./assets/images/Harry.jpg");
     var hermione = new Character("Hermione Granger", 200, 40, 70, "./assets/images/hermione.jpg");
     var ron = new Character("Ron Weasley", 130, 10, 2, "./assets/images/Ron.png");
@@ -80,7 +81,6 @@ function initCharacters() {
 
 // Create the character cards onscreen
 function characterCards(divID) {
-    requirementTheme.play();// starts theme song
     $(divID).children().remove();
     for (var i = 0; i < charArray.length; i++) {
         $(divID).append("<div style = 'background-color:#015564' />");
