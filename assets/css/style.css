@@ -49,7 +49,7 @@ body {
 
 
 #wand1{
-    background-image: url("/assets/images/wands-01.png");
+    background-image: url("../images/wands01.png");
     justify-content: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -60,7 +60,7 @@ body {
 }
 
 .wand2{
-    background-image: url("/assets/images/wands-02.png");
+    background-image: url("../images/wands02.png");
     justify-content: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -168,7 +168,7 @@ body {
 }
 
 #wands{
-    background-image: url("/assets/images/wands-03.png");
+    background-image: url("../images/wands03.png");
     justify-content: center;
     background-size: contain;
     background-repeat: no-repeat;
