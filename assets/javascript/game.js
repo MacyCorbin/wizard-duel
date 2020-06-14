@@ -52,7 +52,7 @@ function Character(name, hp, ap, counter, pic) {
 // Performs an attack
 Character.prototype.attack = function (Obj) {
     var userSpell = spellList[Math.floor(Math.random()*spellList.length)];//random spell name
-    this.attackPower= Math.floor(Math.random() * 70);//random spell attack value
+    this.attackPower= Math.floor(Math.random() * 60)+5;//random spell attack value
     Obj.healthPoints -= this.attackPower;
     $("#message").html("You attacked " +
         Obj.name + " with " + userSpell+ " for " + this.attackPower + " damage points.");
@@ -62,7 +62,7 @@ Character.prototype.attack = function (Obj) {
 // Performs a counter attack
 Character.prototype.counterAttack = function (Obj) {
     var opponentSpell = spellList[Math.floor(Math.random()*spellList.length)];//random spell name
-    this.counterAttackPower = Math.floor(Math.random() * 25);//random spell attack value
+    this.counterAttackPower = Math.floor(Math.random() * 22) + 5;//random spell attack value
     Obj.healthPoints -= this.counterAttackPower;
     $("#message").append("<br>" + this.name + " counter attacked you with " +
     opponentSpell+ " for " + this.counterAttackPower + " damage points.");
@@ -70,10 +70,10 @@ Character.prototype.counterAttack = function (Obj) {
 
 // Initialize all the characters
 function initCharacters() {
-    var harry = new Character("Harry Potter", 170, 30, 20, "./assets/images/Harry.jpg");
-    var hermione = new Character("Hermione Granger", 200, 40, 70, "./assets/images/hermione.jpg");
-    var ron = new Character("Ron Weasley", 130, 10, 2, "./assets/images/Ron.png");
-    var ginny = new Character("Ginny Weasley", 150, 20, 15, "./assets/images/Ginny.jpg");
+    var harry = new Character("Harry Potter", 175, 30, 30, "./assets/images/Harry.jpg");
+    var hermione = new Character("Hermione Granger", 200, 35, 35, "./assets/images/hermione.jpg");
+    var ron = new Character("Ron Weasley", 200, 20, 20, "./assets/images/Ron.png");
+    var ginny = new Character("Ginny Weasley", 150, 25, 25, "./assets/images/Ginny.jpg");
     charArray.push(harry, hermione, ron, ginny);
 }
 
@@ -82,15 +82,17 @@ function characterCards(divID) {
     $(divID).children().remove();
     for (var i = 0; i < charArray.length; i++) {
         $(divID).append("<div style = 'background-color:#015564' />");
+        $(divID + " img:last-child").attr('id', 'image-hover');
         $(divID + " div:last-child").addClass("card");
-        $(divID + " div:last-child").append("<img style = 'background-color:#015564; border:#015564'/>");
+        $(divID + " div:last-child").addClass("img-hover");
+        $(divID + " div:last-child").append("<img style = 'background-color:#015564; border:#015564'/>" );
         $(divID + " img:last-child").attr("id", charArray[i].name);
         $(divID + " img:last-child").attr("class", "card-img-top");
         $(divID + " img:last-child").attr("src", charArray[i].pic);
         $(divID + " img:last-child").addClass("img-thumbnail");
-        $(divID + " div:last-child").append(charArray[i].name + "<br>");
-        $(divID + " div:last-child").append("HP: " + charArray[i].healthPoints);
-        $(divID + " idv:last-child").append();
+        $(divID + " div:last-child").append("<section class='remove-hover'>" + charArray[i].name + '</section>');
+        $(divID + " div:last-child").append("<section class='remove-hover text-margin'>" +"HP: " + charArray[i].healthPoints+ '</section>');
+        $(divID + " div:last-child").append();
 
     }
 }
@@ -111,6 +113,7 @@ function changeView() {
     $("#playerScreen").empty();
     $("#duelScreen").show();
     $("#backgrounds").removeClass("background1");
+    $("#image-hover").removeClass("image-hover");
     $("#backgrounds").addClass("background2");
 }
 
@@ -150,6 +153,7 @@ $(document).on("click", "img", function () {
         $("#opponentDiv").append("<br>" + opponent.name);
         $("#opponentHealthDiv").append("HP: " + opponent.healthPoints);
         $("#opponentHealthDiv").addClass("animated zoomInRight");
+        
     }
     // Stores the character the user has clicked on in the player variable and removes it from charArray
     if (!playerSelected) {
@@ -166,10 +170,12 @@ $(document).on("click", "img", function () {
         updatePics("#game", "#opponentLeft");
         $("#playerDiv").append(this); // appends the selected player to the div
         $("#playerDiv").addClass("animated zoomIn");
+        $("#playerDiv").addClass("remove-hover");
         $("#playerDiv").append(player.name);
         $("#playerHealthDiv").append("HP: " + player.healthPoints);
         $("#playerHealthDiv").addClass("animated zoomIn");
     }
+    
 
 });
 

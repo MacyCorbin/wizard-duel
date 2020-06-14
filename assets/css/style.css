@@ -90,9 +90,9 @@ body {
     font-family: 'IM Fell Double Pica', serif;
     /* font-family: 'Pompiere', cursive; */
     /* font-family: 'Bellefair', serif; */
-    /* font-family: 'Thasadith', sans-serif;  */
-    
+    /* font-family: 'Thasadith', sans-serif;  */  
 }
+
 
 #playerScreen .header{
     font-family: "HARRYP__";
@@ -117,6 +117,18 @@ body {
    margin: 0 20%;
    text-shadow: 2px 1px 4px rgb(0, 0, 0);
    font-size: 25px;
+}
+
+.img-hover:hover{
+    cursor: pointer;
+}
+
+.remove-hover:hover{
+    cursor: default;
+}
+
+.card{
+    border-width: 0px !important;
 }
 
 /*----------Duel Screen-----------*/
@@ -162,10 +174,12 @@ body {
     padding:0px;
 }
 
+
 /*----------Duel Images-----------*/
 #img-size{
     width:70%;
 }
+
 
 #wands{
     background-image: url("../images/wands03.png");
@@ -198,6 +212,7 @@ body {
 .button:hover{
     background-color: rgb(45, 163, 118);
     border: 2px solid rgb(45, 163, 118);
+    cursor: pointer;
 }
 /*----------Opponent-----------*/
 #opponentLeft img{
@@ -208,6 +223,11 @@ body {
 #opponentDiv, #opponentHealthDiv{
     font-size: 1.8vw;
 }
+
+#opponentLeft:hover{
+    cursor: pointer;
+}
+
 
 /*----------Messages-----------*/
 #message {
